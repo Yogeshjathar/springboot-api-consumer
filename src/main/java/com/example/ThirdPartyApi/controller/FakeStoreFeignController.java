@@ -1,5 +1,6 @@
 package com.example.ThirdPartyApi.controller;
 
+import com.example.ThirdPartyApi.Entity.Product;
 import com.example.ThirdPartyApi.service.FakeStoreClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,7 +19,7 @@ public class FakeStoreFeignController {
     }
 
     @GetMapping("/products")
-    public List<Object> getProducts() {
+    public List<Product> getProducts() {
         return fakeStoreClient.getProducts();
     }
 }

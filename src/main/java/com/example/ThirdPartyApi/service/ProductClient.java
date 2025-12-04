@@ -1,7 +1,11 @@
 package com.example.ThirdPartyApi.service;
 
+import com.example.ThirdPartyApi.Entity.Product;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
+
+import java.util.Arrays;
+import java.util.List;
 
 @Service
 public class ProductClient {
@@ -12,8 +16,9 @@ public class ProductClient {
         this.restTemplate = restTemplate;
     }
 
-    public Object[] getAllProducts(){
-        String url = "https://fakestoreapi.com/products/";
-        return restTemplate.getForObject(url, Object[].class);
+    private static final String url = "https://fakestoreapi.com/products/";
+    public List<Product> getAllProducts(){
+        Product[] p = restTemplate.getForObject(url, Product[].class);
+        return Arrays.asList(p);
     }
 }

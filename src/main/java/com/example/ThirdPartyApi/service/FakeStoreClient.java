@@ -1,5 +1,6 @@
 package com.example.ThirdPartyApi.service;
 
+import com.example.ThirdPartyApi.Entity.Product;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 
@@ -9,6 +10,6 @@ import java.util.List;
 public interface FakeStoreClient {
 
     @GetMapping("/products")
-    List<Object> getProducts();
+    List<Product> getProducts();
 
 }

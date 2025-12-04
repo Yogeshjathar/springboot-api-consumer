@@ -1,5 +1,6 @@
 package com.example.ThirdPartyApi.controller;
 
+import com.example.ThirdPartyApi.Entity.Product;
 import com.example.ThirdPartyApi.service.ProductWebClientService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,7 +18,7 @@ public class ProductWebClientContoller {
     private ProductWebClientService productWebClientService;
 
     @GetMapping("/product")
-    public Mono<List<Object>> getProduct(){
+    public Mono<List<Product>> getProduct(){
         return productWebClientService.fetchProducts();
     }
 }
